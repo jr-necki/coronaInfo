@@ -2,17 +2,21 @@ package com.example.finalproject;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -29,8 +33,26 @@ public class MainActivity extends AppCompatActivity {
     GPSTracker gpsTracker;
     TextView addrTv;
     Button mapBtn;
-    Data data;
-    String json = "";
+
+    //거리두기 단계
+    TextView stepTv;
+    //집합금지
+    LinearLayout peopleLimitLy;
+    ImageView peopleLimitIv;
+    TextView peopleLimitTv;
+    //시간제한
+    LinearLayout timeLimitLy;
+    ImageView timeLimitIv;
+    TextView timeLimitTv;
+
+    String json="";
+    JSONObject jsonObject;
+    JSONObject data;
+
+    String distanceStep="";
+    String period="";
+    String  peopleLimit="";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +64,39 @@ public class MainActivity extends AppCompatActivity {
         addrTv=(TextView) findViewById(R.id.addrTv);
         addrTv.setText(address);
         String[] values=address.split(" ");
-        String region=values[1];
+        String nowRegion=values[1];
+        //지역 이름 정하기
+        if(nowRegion.contains("경기")){
+            nowRegion="경기";
+        }else if(nowRegion.contains("서울")){
+            nowRegion="서울";
+        }else if(nowRegion.contains("인천")){
+            nowRegion="인천";
+        }else if(nowRegion.contains("강원")){
+            nowRegion="강원";
+        }else if(nowRegion.contains("")){
+            nowRegion="서울";
+        }else if(nowRegion.contains("충북")||nowRegion.contains("충청북도")){
+            nowRegion="충북";
+        }else if(nowRegion.contains("경북")||nowRegion.contains("경상북도")){
+            nowRegion="경북";
+        }else if(nowRegion.contains("충남")||nowRegion.contains("충청남도")){
+            nowRegion="충남";
+        }else if(nowRegion.contains("대전")){
+            nowRegion="대전";
+        }else if(nowRegion.contains("대구")){
+            nowRegion="대구";
+        }else if(nowRegion.contains("전북")||nowRegion.contains("전라북도")){
+            nowRegion="전북";
+        }else if(nowRegion.contains("경남")||nowRegion.contains("경상남도")){
+            nowRegion="경남";
+        }else if(nowRegion.contains("울산")){
+            nowRegion="울산";
+        }else if(nowRegion.contains("부산")){
+            nowRegion="부산";
+        }else{
+            nowRegion="제주";
+        }
         mapBtn=(Button)findViewById(R.id.mapBtn);
         mapBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,51 +106,100 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        json=loadJSONFromAsset();
+        try {
+            jsonObject = new JSONObject(json);
+            data = jsonObject.getJSONObject("data");
+            JSONObject region=data.getJSONObject("region");
+            JSONObject regionObj=null;
+            switch (nowRegion){
+                case "경기":regionObj=region.getJSONObject("경기"); break;
+                case "서울":regionObj=region.getJSONObject("서울"); break;
+                case "인천":regionObj=region.getJSONObject("인천"); break;
+                case "강원":regionObj=region.getJSONObject("강원"); break;
+                case "충북":regionObj=region.getJSONObject("충북"); break;
+                case "세종":regionObj=region.getJSONObject("세종"); break;
+                case "경북":regionObj=region.getJSONObject("경북"); break;
+                case "충남":regionObj=region.getJSONObject("충남"); break;
+                case "대전":regionObj=region.getJSONObject("대전"); break;
+                case "대구":regionObj=region.getJSONObject("대구"); break;
+                case "전북":regionObj=region.getJSONObject("전북"); break;
+                case "경남":regionObj=region.getJSONObject("경남"); break;
+                case "울산":regionObj=region.getJSONObject("울산"); break;
+                case "부산":regionObj=region.getJSONObject("부산"); break;
+                case "광주":regionObj=region.getJSONObject("광주"); break;
+                case "전남":regionObj=region.getJSONObject("전남"); break;
+                case "제주":regionObj=region.getJSONObject("제주"); break;
+                default:return;
+            }
+            distanceStep=regionObj.getString("distanceStep");
+            period=regionObj.getString("period");
+            peopleLimit=regionObj.getString("peopleLimit");
+            stepTv=(TextView)findViewById(R.id.stepTv);
+            stepTv.setText(distanceStep);
+            System.out.println(distanceStep+" "+" "+peopleLimit+" ");
+            if(peopleLimit.equals(false)){
+                peopleLimitLy=(LinearLayout)findViewById(R.id.peopleLimitLy);
+                peopleLimitLy .setBackground(ContextCompat.getDrawable(this, R.drawable.border_off));
+                peopleLimitIv=(ImageView)findViewById(R.id.peopleLimitIv);
+                peopleLimitIv.setBackground(ContextCompat.getDrawable(this, R.drawable.people_off));
+                peopleLimitTv=(TextView)findViewById(R.id.peopleLimitTv);
+                peopleLimitTv.setTextColor(Color.parseColor("#6c7474"));
+            }
 
-
-    }
-
-/////////////////////////////////////json/////////////////////////////////////////////////////////////////
-private String getJsonString()
-{
-    try {
-        InputStream is = getAssets().open("coronainfo.json");
-        int fileSize = is.available();
-
-        byte[] buffer = new byte[fileSize];
-        is.read(buffer);
-        is.close();
-
-        json = new String(buffer, "UTF-8");
-    }
-    catch (IOException ex)
-    {
-        ex.printStackTrace();
-    }
-
-    return json;
-}
-    private void jsonParsing(String region)
-    {
-        json=getJsonString();
-        try{
-            JSONObject jsonObject = new JSONObject(json);
-
-            JSONArray movieArray = jsonObject.getJSONArray("region");
-
-            for(int i=0; i<movieArray.length(); i++)
-            {
-                JSONObject movieObject = movieArray.getJSONObject(i);
-
-                data = new Data();
-                data.setRegion(jsonObject.getString("region"));
-                System.out.println(data.getRegion());
+            JSONObject step=data.getJSONObject("step");
+            JSONObject stepObj=null;
+            String time="";
+            switch (distanceStep){
+                case "1":
+                case "1.5":
+                    timeLimitLy=(LinearLayout)findViewById(R.id.timeLimitLy);
+                    timeLimitLy .setBackground(ContextCompat.getDrawable(this, R.drawable.border_off));
+                    timeLimitIv=(ImageView)findViewById(R.id.timeLimitIv);
+                    timeLimitIv.setBackground(ContextCompat.getDrawable(this, R.drawable.time_off));
+                    timeLimitTv=(TextView)findViewById(R.id.timeLimitTv);
+                    timeLimitTv.setTextColor(Color.parseColor("#6c7474"));
+                    break;
+                case "2": stepObj=step.getJSONObject("2"); time=stepObj.getString("timeLimit");break;
+                case "2.5":stepObj=step.getJSONObject("2.5"); time=stepObj.getString("timeLimit");break;
+                case "3":stepObj=step.getJSONObject("3"); time=stepObj.getString("timeLimit");break;
+                default:break;
+            }
+            timeLimitTv=(TextView)findViewById(R.id.timeLimitTv);
+            if(time.equals("")){
+                timeLimitTv.setText("시간 제한");
+            }else{
+                timeLimitTv.setText(time+"시 제한");
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+
     }
-////////////////////////////////////주소/////////////////////////////////////////////////////////////////////
+
+    public String loadJSONFromAsset() {
+        String jsonText="";
+        try {
+            InputStream is = getAssets().open("jsons/coronainfo.json");
+            int size = is.available();
+            byte[] buffer = new byte[size];
+
+            is.read(buffer);
+            is.close();
+            jsonText = new String(buffer, "UTF-8");
+            System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@2");
+            System.out.println(jsonText);
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+        return jsonText;
+
+    }
+
+    ////////////////////////////////////주소/////////////////////////////////////////////////////////////////////
     public String getCurrentAddress(double latitude, double longitude) {
         Geocoder geocoder = new Geocoder(this, Locale.getDefault());
         List<Address> addresses;
