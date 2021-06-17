@@ -1,0 +1,112 @@
+{
+  "msg": "success",
+  "data": {
+    "region": {
+      "경기": {
+        "distanceStep": "2",
+        "period": "21.6.14~7.4.",
+        "peopleLimit": "true"
+      },
+      "서": {
+        "distanceStep": "2",
+        "period": "21.6.14~7.4.",
+        "peopleLimit": "true"
+      },
+      "인천": {
+        "distanceStep": "2",
+        "period": "21.6.14~7.4.",
+        "peopleLimit": "true"
+      },
+      "강원": {
+        "distanceStep": "1.5",
+        "period": "21.6.14~7.4.",
+        "peopleLimit": "true"
+      },
+      "충북": {
+        "distanceStep": "1.5",
+        "period": "21.6.14~7.4.",
+        "peopleLimit": "true"
+      },
+      "세종": {
+        "distanceStep": "1.5",
+        "period": "21.6.14~7.4.",
+        "peopleLimit": "true"
+      },
+      "경북": {
+        "distanceStep": "1.5",
+        "period": "21.6.14~7.4.",
+        "peopleLimit": "true"
+      },
+      "충남": {
+        "distanceStep": "1.5",
+        "period": "21.6.14~7.4.",
+        "peopleLimit": "true"
+      },
+      "대전": {
+        "distanceStep": "1.5",
+        "period": "21.6.14~7.4.",
+        "peopleLimit": "true"
+      },
+      "대구": {
+        "distanceStep": "1.5",
+        "period": "21.6.14~7.4.",
+        "peopleLimit": "true"
+      },
+      "전북": {
+        "distanceStep": "1.5",
+        "period": "21.6.14~7.4.",
+        "peopleLimit": "true"
+      },
+      "경남": {
+        "distanceStep": "1.5",
+        "period": "21.6.14~7.4.",
+        "peopleLimit": "true"
+      },
+      "울산": {
+        "distanceStep": "1.5",
+        "period": "21.6.14~7.4.",
+        "peopleLimit": "true"
+      },
+      "부산": {
+        "distanceStep": "1.5",
+        "period": "21.6.14~7.4.",
+        "peopleLimit": "true"
+      },
+      "광주": {
+        "distanceStep": "1.5",
+        "period": "21.6.14~7.4.",
+        "peopleLimit": "true"
+      },
+      "전남": {
+        "distanceStep": "1.5",
+        "period": "21.6.14~7.4.",
+        "peopleLimit": "true"
+      },
+      "제주": {
+        "distanceStep": "2",
+        "period": "21.5.31~6.20.",
+        "peopleLimit": "true"
+      }
+    },
+    "step": {
+      "1": {
+        "info": "정상운영"
+      },
+      "1.5": {
+        "info": "정상운영"
+      },
+      "2": {
+        "info": "유흥시설5종집합금지",
+        "timeLimit": "21"
+        },
+      "2.5": {
+        "info": "중점관리시설집합금지",
+        "timeLimit": "21"
+      },
+      "3": {
+        "info": "필수시설외운영중단",
+        "timeLimit": "true"
+      }
+    }
+  }
+}

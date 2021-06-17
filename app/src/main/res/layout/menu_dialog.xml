@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/radioGG"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+
+            android:text="경기" />
+
+        <RadioButton
+            android:id="@+id/radiSL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="서울" />
+
+        <RadioButton
+            android:id="@+id/radioIC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="인천" />
+
+        <RadioButton
+            android:id="@+id/radioGW"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="강원" />
+
+        <RadioButton
+            android:id="@+id/radiCB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="충북" />
+
+        <RadioButton
+            android:id="@+id/radioKB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="경북" />
+
+        <RadioButton
+            android:id="@+id/radioDJ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="대전" />
+        <RadioButton
+            android:id="@+id/radioSJ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="세종" />
+
+        <RadioButton
+            android:id="@+id/radioCN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="충남" />
+
+        <RadioButton
+            android:id="@+id/radioJB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="전북" />
+
+        <RadioButton
+            android:id="@+id/radioDG"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="대구" />
+
+        <RadioButton
+            android:id="@+id/radioKN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="경남" />
+
+        <RadioButton
+            android:id="@+id/radioGJ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="광주" />
+
+        <RadioButton
+        android:id="@+id/radioJN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="전남" />
+
+        <RadioButton
+            android:id="@+id/radioBS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="부산" />
+        <RadioButton
+            android:id="@+id/radioUS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="울산" />
+
+        <RadioButton
+            android:id="@+id/radioJJ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="제주" />
+
+    </RadioGroup>
+
+</LinearLayout>

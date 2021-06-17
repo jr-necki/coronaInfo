@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@color/colorPrimary">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/arrow"
+        android:id="@+id/arrow"
+       />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="전국 거리두기 단계 현황"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="15dp"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/menu"
+            android:id="@+id/menuIv"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+
+        android:background="@drawable/map">
+
+        <Button
+            android:id="@+id/btnG"
+            android:layout_width="50dp"
+            android:padding="3dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="129dp"
+            android:layout_marginLeft="129dp"
+            android:layout_marginTop="54dp"
+            android:background="@drawable/button"
+            android:textSize="10dp"
+            android:text="경기 2" />
+
+        <Button
+            android:id="@+id/btnI"
+            android:layout_width="50dp"
+            android:padding="3dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="55dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="99dp"
+            android:background="@drawable/button"
+            android:textSize="10dp"
+            android:text="인천 2" />
+
+        <Button
+            android:id="@+id/btnJ"
+            android:layout_width="50dp"
+            android:padding="3dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="21dp"
+            android:layout_marginLeft="21dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/button"
+            android:textSize="10dp"
+            android:text="제주 2" />
+
+        <Button
+            android:id="@+id/btnK"
+            android:layout_width="50dp"
+            android:padding="3dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="94dp"
+            android:layout_marginEnd="117dp"
+            android:layout_marginRight="117dp"
+            android:background="@drawable/button"
+            android:textSize="10dp"
+            android:text="강원 1.5" />
+
+        <Button
+            android:id="@+id/btnC"
+            android:layout_width="50dp"
+            android:padding="3dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="172dp"
+            android:layout_marginEnd="156dp"
+            android:layout_marginRight="156dp"
+            android:background="@drawable/button"
+            android:textSize="10dp"
+            android:text="충북 1.5" />
+
+        <Button
+            android:id="@+id/btnD"
+            android:layout_width="50dp"
+            android:padding="3dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="248dp"
+            android:layout_marginEnd="176dp"
+            android:layout_marginRight="176dp"
+            android:background="@drawable/button"
+            android:textSize="10dp"
+            android:text="대전 1.5" />
+
+        <Button
+            android:id="@+id/buttonS"
+            android:layout_width="50dp"
+            android:padding="3dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="113dp"
+            android:layout_marginLeft="113dp"
+            android:layout_marginTop="115dp"
+            android:background="@drawable/button"
+            android:textSize="10dp"
+            android:text="서울 2" />
+
+        <Button
+            android:id="@+id/buttonSe"
+            android:layout_width="50dp"
+            android:padding="3dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="110dp"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="199dp"
+            android:background="@drawable/button"
+            android:textSize="10dp"
+            android:text="세종 1.5" />
+
+        <Button
+            android:id="@+id/buttonCN"
+            android:layout_width="50dp"
+            android:padding="3dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="66dp"
+            android:layout_marginLeft="66dp"
+            android:layout_marginTop="265dp"
+            android:background="@drawable/button"
+            android:textSize="10dp"
+            android:text="충남 1.5" />
+
+
+
+        <Button
+            android:id="@+id/buttonKB"
+            android:layout_width="50dp"
+            android:padding="3dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="300dp"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="234dp"
+            android:background="@drawable/button"
+            android:textSize="10dp"
+            android:text="경북 1.5" />
+
+        <Button
+            android:id="@+id/buttonDG"
+            android:layout_width="50dp"
+            android:padding="3dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="293dp"
+            android:layout_marginLeft="293dp"
+            android:layout_marginTop="333dp"
+            android:background="@drawable/button"
+            android:textSize="10dp"
+            android:text="대구 1.5" />
+
+        <Button
+            android:id="@+id/buttonUS"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="350dp"
+            android:layout_marginLeft="350dp"
+            android:layout_marginTop="422dp"
+            android:background="@drawable/button"
+            android:textSize="10dp"
+            android:padding="3dp"
+            android:text="울산 1.5" />
+
+        <Button
+            android:id="@+id/buttonBS"
+            android:layout_width="50dp"
+            android:padding="3dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="298dp"
+            android:layout_marginLeft="298dp"
+            android:layout_marginTop="494dp"
+            android:background="@drawable/button"
+            android:textSize="10dp"
+            android:text="부산 1.5" />
+
+        <Button
+            android:id="@+id/buttonKN"
+            android:layout_width="50dp"
+            android:padding="3dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="250dp"
+            android:layout_marginLeft="250dp"
+            android:layout_marginTop="420dp"
+            android:background="@drawable/button"
+            android:textSize="10dp"
+            android:text="경남 1.5" />
+
+        <Button
+            android:id="@+id/buttonGJ"
+            android:layout_width="50dp"
+            android:padding="3dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="118dp"
+            android:layout_marginLeft="118dp"
+            android:layout_marginTop="461dp"
+            android:background="@drawable/button"
+            android:textSize="10dp"
+            android:text="광주 1.5" />
+
+        <Button
+            android:id="@+id/buttonJB"
+            android:layout_width="50dp"
+            android:padding="3dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="131dp"
+            android:layout_marginLeft="131dp"
+            android:layout_marginTop="371dp"
+            android:background="@drawable/button"
+            android:textSize="10dp"
+            android:text="전북 1.5" />
+
+        <Button
+            android:id="@+id/buttonJN"
+            android:layout_width="50dp"
+            android:padding="3dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="36dp"
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="542dp"
+            android:background="@drawable/button"
+            android:textSize="10dp"
+            android:text="전남 1.5" />
+    </RelativeLayout>
+
+</LinearLayout>
