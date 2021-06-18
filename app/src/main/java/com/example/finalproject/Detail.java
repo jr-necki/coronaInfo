@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CalendarView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,11 +18,7 @@ public class Detail extends AppCompatActivity {
     TextView periodTv;
     ImageView backBtn;
     TextView ddayTv;
-    String startM="";
-    String startD="";
-    String finishM="";
-    String finishD="";
-    int leftDays=0;
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.distance_step_detail);
@@ -60,6 +57,8 @@ public class Detail extends AppCompatActivity {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+
+        SimpleDateFormat yyyyMMdd2 = new SimpleDateFormat("yyyyMMdd");
 
 
 

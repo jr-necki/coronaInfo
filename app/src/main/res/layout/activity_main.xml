@@ -26,6 +26,13 @@
             android:textSize="15dp"
             android:text="위치설정"
             android:id="@+id/addrTv"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:id="@+id/editIcon"
+            android:background="@drawable/draw"/>
     <View
         android:layout_width="0dp"
         android:layout_height="0dp"

@@ -39,7 +39,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/menu"
+            android:background="@drawable/app_logo_small"
             android:layout_margin="10dp"
             />
 
@@ -55,6 +55,7 @@
             android:id="@+id/simple_calendarview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:showWeekNumber="false"
             android:background="@drawable/border2"/>
         <LinearLayout
             android:layout_width="match_parent"

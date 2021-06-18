@@ -9,8 +9,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
     GPSTracker gpsTracker;
     TextView addrTv;
+    ImageView editIcon;
     Button mapBtn;
     LinearLayout stepLy;
     TextView updateTv;
@@ -56,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
     String period="";
     String  peopleLimit="";
 
+    View dialogView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +73,39 @@ public class MainActivity extends AppCompatActivity {
         addrTv.setText(address);
         String[] values=address.split(" ");
         String nowRegion=values[1];
+        settingData(nowRegion);
+        editIcon=(ImageView) findViewById(R.id.editIcon);
+        editIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialogView=(View) View.inflate(MainActivity.this,R.layout.edit_location,null);
+                AlertDialog.Builder dlg=new AlertDialog.Builder(MainActivity.this);
+                dlg.setTitle("수정");
+                dlg.setView(dialogView);
+                final EditText editAddr=(EditText)dialogView.findViewById(R.id.editAddr);
+                editAddr.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        editAddr.setText("");
+                    }
+                });
+                dlg.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        regionString=(editAddr.getText().toString());
+                        addrTv.setText(regionString);
+                        settingData(regionString);
+                    }
+                });
+                dlg.setNegativeButton("취소",null);
+                dlg.show();
+            }
+        });
+
+    }
+
+    private void settingData(String nowRegion) {
+
         //지역 이름 정하기
         if(nowRegion.contains("경기")){
             nowRegion="경기";
@@ -77,10 +115,10 @@ public class MainActivity extends AppCompatActivity {
             nowRegion="인천";
         }else if(nowRegion.contains("강원")){
             nowRegion="강원";
-        }else if(nowRegion.contains("")){
-            nowRegion="서울";
         }else if(nowRegion.contains("충북")||nowRegion.contains("충청북도")){
             nowRegion="충북";
+        }else if(nowRegion.contains("세종")){
+            nowRegion="세종";
         }else if(nowRegion.contains("경북")||nowRegion.contains("경상북도")){
             nowRegion="경북";
         }else if(nowRegion.contains("충남")||nowRegion.contains("충청남도")){
@@ -91,6 +129,10 @@ public class MainActivity extends AppCompatActivity {
             nowRegion="대구";
         }else if(nowRegion.contains("전북")||nowRegion.contains("전라북도")){
             nowRegion="전북";
+        }else if(nowRegion.contains("전남")||nowRegion.contains("전라남도")){
+            nowRegion="전남";
+        }else if(nowRegion.contains("광주")){
+            nowRegion="광주";
         }else if(nowRegion.contains("경남")||nowRegion.contains("경상남도")){
             nowRegion="경남";
         }else if(nowRegion.contains("울산")){
@@ -100,6 +142,7 @@ public class MainActivity extends AppCompatActivity {
         }else{
             nowRegion="제주";
         }
+
         mapBtn=(Button)findViewById(R.id.mapBtn);
         mapBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -147,13 +190,15 @@ public class MainActivity extends AppCompatActivity {
                 case "광주":regionObj=region.getJSONObject("광주"); break;
                 case "전남":regionObj=region.getJSONObject("전남"); break;
                 case "제주":regionObj=region.getJSONObject("제주"); break;
-                default:return;
+                default:regionObj=region.getJSONObject("서울"); break;
             }
             distanceStep=regionObj.getString("distanceStep");
+            System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"+distanceStep+"단계");
+            stepTv.setText(distanceStep);
             period=regionObj.getString("period");
             peopleLimit=regionObj.getString("peopleLimit");
 
-            stepTv.setText(distanceStep);
+
 
             System.out.println(distanceStep+" "+" "+peopleLimit+" ");
             if(peopleLimit.equals(false)){
@@ -178,9 +223,30 @@ public class MainActivity extends AppCompatActivity {
                     timeLimitTv=(TextView)findViewById(R.id.timeLimitTv);
                     timeLimitTv.setTextColor(Color.parseColor("#6c7474"));
                     break;
-                case "2": stepObj=step.getJSONObject("2"); time=stepObj.getString("timeLimit");break;
-                case "2.5":stepObj=step.getJSONObject("2.5"); time=stepObj.getString("timeLimit");break;
-                case "3":stepObj=step.getJSONObject("3"); time=stepObj.getString("timeLimit");break;
+                case "2": stepObj=step.getJSONObject("2"); time=stepObj.getString("timeLimit");
+                    timeLimitLy=(LinearLayout)findViewById(R.id.timeLimitLy);
+                    timeLimitLy .setBackground(ContextCompat.getDrawable(this, R.drawable.border));
+                    timeLimitIv=(ImageView)findViewById(R.id.timeLimitIv);
+                    timeLimitIv.setBackground(ContextCompat.getDrawable(this, R.drawable.time));
+                    timeLimitTv=(TextView)findViewById(R.id.timeLimitTv);
+                    timeLimitTv.setTextColor(Color.parseColor("#ffd438"));
+                break;
+                case "2.5":stepObj=step.getJSONObject("2.5"); time=stepObj.getString("timeLimit");
+                    timeLimitLy=(LinearLayout)findViewById(R.id.timeLimitLy);
+                    timeLimitLy .setBackground(ContextCompat.getDrawable(this, R.drawable.border));
+                    timeLimitIv=(ImageView)findViewById(R.id.timeLimitIv);
+                    timeLimitIv.setBackground(ContextCompat.getDrawable(this, R.drawable.time));
+                    timeLimitTv=(TextView)findViewById(R.id.timeLimitTv);
+                    timeLimitTv.setTextColor(Color.parseColor("#ffd438"));
+                break;
+                case "3":stepObj=step.getJSONObject("3"); time=stepObj.getString("timeLimit");
+                    timeLimitLy=(LinearLayout)findViewById(R.id.timeLimitLy);
+                    timeLimitLy .setBackground(ContextCompat.getDrawable(this, R.drawable.border));
+                    timeLimitIv=(ImageView)findViewById(R.id.timeLimitIv);
+                    timeLimitIv.setBackground(ContextCompat.getDrawable(this, R.drawable.time));
+                    timeLimitTv=(TextView)findViewById(R.id.timeLimitTv);
+                    timeLimitTv.setTextColor(Color.parseColor("#ffd438"));
+                break;
                 default:break;
             }
             timeLimitTv=(TextView)findViewById(R.id.timeLimitTv);
@@ -192,8 +258,6 @@ public class MainActivity extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-
     }
 
     public String loadJSONFromAsset() {

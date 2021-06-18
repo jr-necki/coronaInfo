@@ -8,6 +8,7 @@ import android.speech.RecognizerIntent;
 import android.view.View;
 
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -74,7 +75,7 @@ public class Region extends AppCompatActivity {
             btnCN.setText("충남 "+jsonObject.getJSONObject("충남").getString("distanceStep"));
 
             btnKB.setText("경북"+jsonObject.getJSONObject("경북").getString("distanceStep"));
-            btnDG.setText("대전 "+jsonObject.getJSONObject("대전").getString("distanceStep"));
+            btnDG.setText("대구 "+jsonObject.getJSONObject("대구").getString("distanceStep"));
             btnUS.setText("울산 "+jsonObject.getJSONObject("울산").getString("distanceStep"));
             btnBS.setText("부산"+jsonObject.getJSONObject("부산").getString("distanceStep"));
             btnKN.setText("경남 "+jsonObject.getJSONObject("경남").getString("distanceStep"));
@@ -97,8 +98,7 @@ public class Region extends AppCompatActivity {
                dlg.setTitle("지역 설정");
                dlg.setView(dialogView);
                final RadioGroup rg=(RadioGroup) dialogView.findViewById(R.id.radioGroup);
-                System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-               System.out.println(dialogView);
+
 
                dlg.setPositiveButton("확인", new DialogInterface.OnClickListener() {
                    @Override
