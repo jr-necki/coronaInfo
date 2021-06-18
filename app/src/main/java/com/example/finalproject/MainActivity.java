@@ -33,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
     GPSTracker gpsTracker;
     TextView addrTv;
     Button mapBtn;
-
+    LinearLayout stepLy;
+    TextView updateTv;
     //거리두기 단계
     TextView stepTv;
     //집합금지
@@ -48,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
     String json="";
     JSONObject jsonObject;
     JSONObject data;
+    JSONObject region;
+    String regionString;
 
     String distanceStep="";
     String period="";
@@ -102,15 +105,29 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(getApplicationContext(), Region.class);
+                intent.putExtra("regionString",regionString);
                 startActivity(intent);
-
+            }
+        });
+        stepTv=(TextView)findViewById(R.id.stepTv);
+        stepLy=(LinearLayout)findViewById(R.id.stepLy);
+        stepLy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(),Detail.class);
+                intent.putExtra("period",period);
+                startActivity(intent);
             }
         });
         json=loadJSONFromAsset();
         try {
             jsonObject = new JSONObject(json);
             data = jsonObject.getJSONObject("data");
-            JSONObject region=data.getJSONObject("region");
+            String update=data.getString("update");
+            updateTv=(TextView) findViewById(R.id.update);
+            updateTv.setText(update);
+            regionString=data.getString("region");
+            region=data.getJSONObject("region");
             JSONObject regionObj=null;
             switch (nowRegion){
                 case "경기":regionObj=region.getJSONObject("경기"); break;
@@ -135,8 +152,9 @@ public class MainActivity extends AppCompatActivity {
             distanceStep=regionObj.getString("distanceStep");
             period=regionObj.getString("period");
             peopleLimit=regionObj.getString("peopleLimit");
-            stepTv=(TextView)findViewById(R.id.stepTv);
+
             stepTv.setText(distanceStep);
+
             System.out.println(distanceStep+" "+" "+peopleLimit+" ");
             if(peopleLimit.equals(false)){
                 peopleLimitLy=(LinearLayout)findViewById(R.id.peopleLimitLy);

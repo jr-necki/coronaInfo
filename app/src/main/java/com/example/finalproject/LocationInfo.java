@@ -25,8 +25,10 @@ import java.io.UnsupportedEncodingException;
 public class LocationInfo extends AppCompatActivity {
     TextView thisLocation;
     ImageView back;
+    TextView updateTv;
     //거리두기 단계
     TextView stepTv;
+    LinearLayout stepLy;
     //집합금지
     LinearLayout peopleLimitLy;
     ImageView peopleLimitIv;
@@ -50,7 +52,7 @@ public class LocationInfo extends AppCompatActivity {
         setContentView(R.layout.location_info);
         thisLocation=(TextView)findViewById(R.id.thisLocation);
         back=(ImageView) findViewById(R.id.back);
-
+        stepLy=(LinearLayout)findViewById(R.id.stepLy);
         Intent intent = getIntent();
         String myData = intent.getStringExtra("selectedRegion");
         thisLocation.setText(myData);
@@ -61,7 +63,14 @@ public class LocationInfo extends AppCompatActivity {
                 finish();
             }
         });
-
+        stepLy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(),Detail.class);
+                intent.putExtra("period",period);
+                startActivity(intent);
+            }
+        });
 
         json=loadJSONFromAsset();
         try {
@@ -69,6 +78,9 @@ public class LocationInfo extends AppCompatActivity {
             data = jsonObject.getJSONObject("data");
             JSONObject region=data.getJSONObject("region");
             JSONObject regionObj=null;
+            String update=data.getString("update");
+            updateTv=(TextView) findViewById(R.id.update);
+            updateTv.setText(update);
             switch (myData){
                 case "경기":regionObj=region.getJSONObject("경기"); break;
                 case "서울":regionObj=region.getJSONObject("서울"); break;

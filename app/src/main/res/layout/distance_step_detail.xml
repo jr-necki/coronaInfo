@@ -17,6 +17,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/arrow"
             android:layout_margin="10dp"
+            android:id="@+id/backBtn"
             />
         <View
             android:layout_width="0dp"
@@ -66,8 +67,9 @@
                 android:textAlignment="center"
                 android:gravity="center"
                 android:text="D-4"
-                android:textSize="60dp"
-                android:textColor="#ffff"/>
+                android:textSize="70dp"
+                android:id="@+id/dday"
+                android:textColor="@color/colorPrimary"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -75,7 +77,8 @@
                 android:gravity="center"
                 android:text="2021.06.01~2021.07.12"
                 android:textSize="20dp"
-                android:textColor="#ffff"/>
+                android:textColor="#ffff"
+                android:id="@+id/periodTv"/>
         </LinearLayout>
 
     </LinearLayout>

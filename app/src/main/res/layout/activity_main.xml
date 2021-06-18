@@ -61,6 +61,7 @@
                 android:layout_margin="20dp"
                 android:textSize="20dp"
                 android:text="업데이트 : 2021.06.16"
+                android:id="@+id/update"
                 android:textColor="#ffff"/>
         </LinearLayout>
 
@@ -74,6 +75,7 @@
             android:layout_marginTop="80dp"
             android:padding="10dp"
             android:background="@drawable/border"
+            android:id="@+id/stepLy"
 
             >
 

@@ -4,87 +4,87 @@
     "region": {
       "경기": {
         "distanceStep": "2",
-        "period": "21.6.14~7.4.",
+        "period": "2021-06-14~2021-07-04",
         "peopleLimit": "true"
       },
       "서울": {
         "distanceStep": "2",
-        "period": "21.6.14~7.4.",
+        "period": "2021-06-14~2021-07-04",
         "peopleLimit": "true"
       },
       "인천": {
         "distanceStep": "2",
-        "period": "21.6.14~7.4.",
+        "period": "2021-06-14~2021-07-04",
         "peopleLimit": "true"
       },
       "강원": {
         "distanceStep": "1.5",
-        "period": "21.6.14~7.4.",
+        "period": "2021-06-14~2021-07-04",
         "peopleLimit": "true"
       },
       "충북": {
         "distanceStep": "1.5",
-        "period": "21.6.14~7.4.",
+        "period": "2021-06-14~2021-07-04",
         "peopleLimit": "true"
       },
       "세종": {
         "distanceStep": "1.5",
-        "period": "21.6.14~7.4.",
+        "period": "2021-06-14~2021-07-04",
         "peopleLimit": "true"
       },
       "경북": {
         "distanceStep": "1.5",
-        "period": "21.6.14~7.4.",
+        "period": "2021-06-14~2021-07-04",
         "peopleLimit": "true"
       },
       "충남": {
         "distanceStep": "1.5",
-        "period": "21.6.14~7.4.",
+        "period": "2021-06-14~2021-07-04",
         "peopleLimit": "true"
       },
       "대전": {
         "distanceStep": "1.5",
-        "period": "21.6.14~7.4.",
+        "period": "2021-06-14~2021-07-04",
         "peopleLimit": "true"
       },
       "대구": {
         "distanceStep": "1.5",
-        "period": "21.6.14~7.4.",
+        "period": "2021-06-14~2021-07-04",
         "peopleLimit": "true"
       },
       "전북": {
         "distanceStep": "1.5",
-        "period": "21.6.14~7.4.",
+        "period": "2021-06-14~2021-07-04",
         "peopleLimit": "true"
       },
       "경남": {
         "distanceStep": "1.5",
-        "period": "21.6.14~7.4.",
+        "period": "2021-06-14~2021-07-04",
         "peopleLimit": "true"
       },
       "울산": {
         "distanceStep": "1.5",
-        "period": "21.6.14~7.4.",
+        "period": "2021-06-14~2021-07-04",
         "peopleLimit": "true"
       },
       "부산": {
         "distanceStep": "1.5",
-        "period": "21.6.14~7.4.",
+        "period": "2021-06-14~2021-07-04",
         "peopleLimit": "true"
       },
       "광주": {
         "distanceStep": "1.5",
-        "period": "21.6.14~7.4.",
+        "period": "2021-06-14~2021-07-04",
         "peopleLimit": "true"
       },
       "전남": {
         "distanceStep": "1.5",
-        "period": "21.6.14~7.4.",
+        "period": "2021-06-14~2021-07-04",
         "peopleLimit": "true"
       },
       "제주": {
         "distanceStep": "2",
-        "period": "21.5.31~6.20.",
+        "period": "2021-05-31~2021-06-20.",
         "peopleLimit": "true"
       }
     },
@@ -109,6 +109,7 @@
         "info": "필수시설외운영중단",
         "timeLimit": "true"
       }
-    }
+    },
+    "update": "2021.06.18 업데이트"
   }
 }

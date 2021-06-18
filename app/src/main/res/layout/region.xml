@@ -135,7 +135,7 @@
             android:text="대전 1.5" />
 
         <Button
-            android:id="@+id/buttonS"
+            android:id="@+id/btnS"
             android:layout_width="50dp"
             android:padding="3dp"
             android:layout_height="wrap_content"
@@ -150,7 +150,7 @@
             android:text="서울 2" />
 
         <Button
-            android:id="@+id/buttonSe"
+            android:id="@+id/btnSE"
             android:layout_width="50dp"
             android:padding="3dp"
             android:layout_height="wrap_content"
@@ -165,7 +165,7 @@
             android:text="세종 1.5" />
 
         <Button
-            android:id="@+id/buttonCN"
+            android:id="@+id/btnCN"
             android:layout_width="50dp"
             android:padding="3dp"
             android:layout_height="wrap_content"
@@ -182,7 +182,7 @@
 
 
         <Button
-            android:id="@+id/buttonKB"
+            android:id="@+id/btnKB"
             android:layout_width="50dp"
             android:padding="3dp"
             android:layout_height="wrap_content"
@@ -197,7 +197,7 @@
             android:text="경북 1.5" />
 
         <Button
-            android:id="@+id/buttonDG"
+            android:id="@+id/btnDG"
             android:layout_width="50dp"
             android:padding="3dp"
             android:layout_height="wrap_content"
@@ -212,7 +212,7 @@
             android:text="대구 1.5" />
 
         <Button
-            android:id="@+id/buttonUS"
+            android:id="@+id/btnUS"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -227,7 +227,7 @@
             android:text="울산 1.5" />
 
         <Button
-            android:id="@+id/buttonBS"
+            android:id="@+id/btnBS"
             android:layout_width="50dp"
             android:padding="3dp"
             android:layout_height="wrap_content"
@@ -242,7 +242,7 @@
             android:text="부산 1.5" />
 
         <Button
-            android:id="@+id/buttonKN"
+            android:id="@+id/btnKN"
             android:layout_width="50dp"
             android:padding="3dp"
             android:layout_height="wrap_content"
@@ -257,7 +257,7 @@
             android:text="경남 1.5" />
 
         <Button
-            android:id="@+id/buttonGJ"
+            android:id="@+id/btnGJ"
             android:layout_width="50dp"
             android:padding="3dp"
             android:layout_height="wrap_content"
@@ -272,7 +272,7 @@
             android:text="광주 1.5" />
 
         <Button
-            android:id="@+id/buttonJB"
+            android:id="@+id/btnJB"
             android:layout_width="50dp"
             android:padding="3dp"
             android:layout_height="wrap_content"
@@ -287,7 +287,7 @@
             android:text="전북 1.5" />
 
         <Button
-            android:id="@+id/buttonJN"
+            android:id="@+id/btnJN"
             android:layout_width="50dp"
             android:padding="3dp"
             android:layout_height="wrap_content"
