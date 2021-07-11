@@ -4,17 +4,17 @@
     "region": {
       "경기": {
         "distanceStep": "2",
-        "period": "2021-06-14~2021-07-04",
+        "period": "2021-07-12~2021-07-26",
         "peopleLimit": "true"
       },
       "서울": {
         "distanceStep": "2",
-        "period": "2021-06-14~2021-07-04",
+        "period": "2021-07-12~2021-07-26",
         "peopleLimit": "true"
       },
       "인천": {
         "distanceStep": "2",
-        "period": "2021-06-14~2021-07-04",
+        "period": "2021-07-12~2021-07-26",
         "peopleLimit": "true"
       },
       "강원": {
@@ -84,7 +84,7 @@
       },
       "제주": {
         "distanceStep": "2",
-        "period": "2021-05-31~2021-06-20.",
+        "period": "2021-05-31~2021-06-20",
         "peopleLimit": "true"
       }
     },

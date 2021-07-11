@@ -193,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
                 default:regionObj=region.getJSONObject("서울"); break;
             }
             distanceStep=regionObj.getString("distanceStep");
-            System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"+distanceStep+"단계");
+
             stepTv.setText(distanceStep);
             period=regionObj.getString("period");
             peopleLimit=regionObj.getString("peopleLimit");

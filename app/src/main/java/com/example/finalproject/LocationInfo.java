@@ -114,6 +114,13 @@ public class LocationInfo extends AppCompatActivity {
                 peopleLimitIv.setBackground(ContextCompat.getDrawable(this, R.drawable.people_off));
                 peopleLimitTv=(TextView)findViewById(R.id.peopleLimitTv);
                 peopleLimitTv.setTextColor(Color.parseColor("#6c7474"));
+            }else{
+                peopleLimitLy=(LinearLayout)findViewById(R.id.peopleLimitLy);
+                peopleLimitLy .setBackground(ContextCompat.getDrawable(this, R.drawable.border));
+                peopleLimitIv=(ImageView)findViewById(R.id.timeLimitIv);
+                peopleLimitIv.setBackground(ContextCompat.getDrawable(this, R.drawable.people));
+                peopleLimitTv=(TextView)findViewById(R.id.peopleLimitTv);
+                peopleLimitTv.setTextColor(Color.parseColor("#ffd438"));
             }
 
             JSONObject step=data.getJSONObject("step");
@@ -129,9 +136,27 @@ public class LocationInfo extends AppCompatActivity {
                             timeLimitTv=(TextView)findViewById(R.id.timeLimitTv);
                             timeLimitTv.setTextColor(Color.parseColor("#6c7474"));
                             break;
-                case "2": stepObj=step.getJSONObject("2"); time=stepObj.getString("timeLimit");break;
-                case "2.5":stepObj=step.getJSONObject("2.5"); time=stepObj.getString("timeLimit");break;
-                case "3":stepObj=step.getJSONObject("3"); time=stepObj.getString("timeLimit");break;
+                case "2": stepObj=step.getJSONObject("2"); time=stepObj.getString("timeLimit");
+                    timeLimitLy=(LinearLayout)findViewById(R.id.timeLimitLy);
+                    timeLimitLy .setBackground(ContextCompat.getDrawable(this, R.drawable.border));
+                    timeLimitIv=(ImageView)findViewById(R.id.timeLimitIv);
+                    timeLimitIv.setBackground(ContextCompat.getDrawable(this, R.drawable.time));
+                    timeLimitTv=(TextView)findViewById(R.id.timeLimitTv);
+                    timeLimitTv.setTextColor(Color.parseColor("#ffd438"));break;
+                case "2.5":stepObj=step.getJSONObject("2.5"); time=stepObj.getString("timeLimit");
+                    timeLimitLy=(LinearLayout)findViewById(R.id.timeLimitLy);
+                    timeLimitLy .setBackground(ContextCompat.getDrawable(this, R.drawable.border));
+                    timeLimitIv=(ImageView)findViewById(R.id.timeLimitIv);
+                    timeLimitIv.setBackground(ContextCompat.getDrawable(this, R.drawable.time));
+                    timeLimitTv=(TextView)findViewById(R.id.timeLimitTv);
+                    timeLimitTv.setTextColor(Color.parseColor("#ffd438"));break;
+                case "3":stepObj=step.getJSONObject("3"); time=stepObj.getString("timeLimit");
+                    timeLimitLy=(LinearLayout)findViewById(R.id.timeLimitLy);
+                    timeLimitLy .setBackground(ContextCompat.getDrawable(this, R.drawable.border));
+                    timeLimitIv=(ImageView)findViewById(R.id.timeLimitIv);
+                    timeLimitIv.setBackground(ContextCompat.getDrawable(this, R.drawable.time));
+                    timeLimitTv=(TextView)findViewById(R.id.timeLimitTv);
+                    timeLimitTv.setTextColor(Color.parseColor("#ffd438"));break;
                 default:break;
             }
             timeLimitTv=(TextView)findViewById(R.id.timeLimitTv);
